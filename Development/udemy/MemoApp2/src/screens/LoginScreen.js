@@ -2,6 +2,19 @@ import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-native';
 
 class LoginScreen extends React.Component {
+  state = {
+    email: '',
+    password: '',
+  }
+
+// eslint-disable-next-Line
+  handleSubmit() {
+
+    console.log('submit');
+    // this.props.navigation.navigate('Home');
+
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -9,9 +22,24 @@ class LoginScreen extends React.Component {
           ログイン
         </Text>
 
-        <TextInput style={styles.input} value="Email Address" />
-        <TextInput style={styles.input} value="PAssWord" />
-        <TouchableHighlight style={styles.button} onPress={() => {this.props.navigation.navigate('Home'); } } underlayColor="#c70f66">
+        <TextInput
+          style={styles.input}
+          value={this.state.email}
+          onChangeText={(text) => { this.setState({ email: text }); }}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Email Address"
+        />
+        <TextInput
+          style={styles.input}
+          value={this.state.password}
+          onChangeText={(text) => { this.setState({ password: text }); }}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Password"
+          secureTextEntry
+        />
+        <TouchableHighlight style={styles.button} onPress={this.handleSubmit.bind(this)} underlayColor="#c70f66">
           <Text style={styles.buttonTitle}>ログインする</Text>
         </TouchableHighlight>
       </View>
