@@ -10,14 +10,11 @@ class MemoEditScreen extends React.Component {
   }
 
   UNSAFE_componentWillMount() {
-    console.log('push3');
     const { params } = this.props.navigation.state;
-    console.log(params);
     this.setState({
       body: params.body,
       key: params.key,
     });
-    console.log('push4');
   }
 
   handlePress() {
