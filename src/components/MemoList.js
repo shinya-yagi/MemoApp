@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   memoListItem: {
-    // width: '100%',
     padding: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
